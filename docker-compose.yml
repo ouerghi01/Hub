@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   backend:
     build: ./tunibiz
@@ -7,6 +6,17 @@ services:
       - "9000:9000"
     depends_on:
       - db
+
+  react-app:
+    build:
+      context: ./tunibiz_react
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80" # Map port 3000 on your host to port 80 inside the container
+    volumes:
+      - ./tunibiz_react:/app # Bind-mount local directory to container
+    environment:
+      - NODE_ENV=development
 
   db:
     image: postgres:16
