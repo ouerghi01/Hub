@@ -9,6 +9,9 @@ scalaVersion := "2.13.14"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.1" % Test
+libraryDependencies += "org.postgresql" % "postgresql" % "42.2.20"
+
+
 
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "scala.controllers._"
